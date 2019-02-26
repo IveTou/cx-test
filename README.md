@@ -12,6 +12,7 @@ Você deverá desenvolver uma aplicação **VUEJS** para [uma API que foi constr
 
 * API a ser utilizada se encontra aqui: <http://www.mocky.io/v2/5c7552e43100009c20c23450>
 * Gostamos de views reativas
+* Gostamos de componentes
 * Gostamos de interfaces responsivas
 * Gostamos de testes
 
