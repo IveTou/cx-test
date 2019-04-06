@@ -2,7 +2,7 @@
   <div class="container">
     <div class="maps" />
     <div class="footer">
-      <span class="md-caption">Última atualização: {{ formattedDate }}</span>
+      <span class="md-caption">Última atualização: {{ last_update | dateFormatter }}</span>
     </div>
   </div>
 </template>
@@ -15,17 +15,15 @@ import moment from 'moment'
     props: {
       origin: Object,
       destination: Object,
-      lastUpdate: String,
+      last_update: String,
       error: Object,
     },
-    data () {
-      return {
-        formattedDate: '',
-      }
+    filters: {
+      dateFormatter(date) {
+        return moment(date).format('DD/MM/YYYY h:mm:ss')
+      },
     },
     async mounted() {
-      this.formattedDate= moment(this.lastUpdate).format('DD/MM/YYYY h:mm:ss');
-
       try {
         const googleMaps = window.google.maps
         const directionsService = new googleMaps.DirectionsService()
@@ -80,7 +78,7 @@ import moment from 'moment'
   }
 
   .maps {
-    height: 300px;
+    height: 360px;
     width: 100%;
   }
 

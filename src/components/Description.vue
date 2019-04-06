@@ -1,0 +1,84 @@
+<template>
+  <div class="description">
+    <div class="md-layout md-gutter md-alignment-top-center">
+        <div class="md-layout-item md-large-size-50 md-medium-size-50 md-small-size-100 md-xsmall-size-100">
+          <md-list class="md-double-line">
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>{{ info.id }}</span>
+                <p class="list-item-caption">ID do frete CargoX </p>
+              </div>
+            </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>{{ info.customer_tracking_number }}</span>
+                <p class="list-item-caption">N° do pedido do cliente</p>
+              </div>
+            </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>{{ info.trucker.name.toUpperCase() }}</span>
+                <p class="list-item-caption">Motorista</p>
+              </div>
+            </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>{{ info.trucker.phone | phoneFormatter }}</span>
+                <p class="list-item-caption">Telefone</p>
+              </div>
+            </md-list-item>
+          </md-list>
+        </div>
+        <div class="md-layout-item md-large-size-50 md-medium-size-50 md-small-size-100 md-xsmall-size-100">
+        </div>  
+    </div>
+  </div>
+</template>
+
+<script>
+  import moment from 'moment'
+
+  export default {
+    name: 'description',
+    props: {
+      info: Object,
+    },
+    filters: {
+      dateFormatter(date) {
+        return moment(date).format('DD/MM/YYYY h:mm:ss')
+      },
+      phoneFormatter(phone) {
+        return phone.replace(/(\d\d)(\d\d)(\d\d\d\d\d)(\d\d\d\d)/, "+$1 ($2) $3-$4")
+      }
+    }
+  }
+</script>
+
+<style>
+  .description {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    padding: 24px 16px;
+  }
+
+  .md-list-item > div > div {
+    align-items: flex-start;
+  }
+
+  .md-icon {
+    margin-right: 16px !important;
+  }
+
+  .md-list-item-text {
+    flex-direction: column-reverse !important;
+  }
+
+  .list-item-caption {
+    margin-bottom: 8px !important;
+  }
+</style>

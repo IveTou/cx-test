@@ -8,13 +8,13 @@
       </div>
       <div class="md-layout md-gutter md-alignment-top-center">
         <div class="md-layout-item md-large-size-60 md-medium-size-60 md-small-size-100 md-xsmall-size-100">
-          <Summary />
+          <Description v-bind:info="info" />
         </div>
         <div class="md-layout-item md-large-size-40 md-medium-size-40 md-small-size-100 md-xsmall-size-100">
           <Maps 
             v-bind:origin="info.origin" 
             v-bind:destination="info.destination" 
-            v-bind:lastUpdate="info.trucker.last_app_position_at"
+            v-bind:last_update="info.trucker.last_app_position_at"
           />
         </div>
       </div>  
@@ -24,7 +24,7 @@
 
 <script>
   import Loader from './Loader.vue'
-  import Summary from './Summary.vue'
+  import Description from './Description.vue'
   import Maps from './Maps.vue'
 
   export default {
@@ -32,7 +32,7 @@
     components: {
       Loader,
       Maps,
-      Summary,
+      Description,
     },
     props: {
       info: Object,
@@ -52,7 +52,7 @@
   .layout {
     text-align: left;
     margin: 0 auto;
-    max-width: 1024px;
+    max-width: 1288px;
     padding: 24px 16px;
   }
 
