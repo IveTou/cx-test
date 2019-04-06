@@ -11,7 +11,7 @@
           Content
         </div>
         <div class="md-layout-item md-large-size-33 md-medium-size-33 md-small-size-100 md-xsmall-size-100">
-          MAP
+          <Map />
         </div>
       </div>  
     </div>
@@ -19,18 +19,20 @@
 </template>
 
 <script>
-import Loader from './Loader.vue'
+  import Loader from './Loader.vue'
+  import Map from './Map.vue'
 
-export default {
-  name: 'Layout',
-  components: {
-    Loader,
-  },
-  props: {
-    info: Object,
-    loading: Boolean,
+  export default {
+    name: 'Layout',
+    components: {
+      Loader,
+      Map,
+    },
+    props: {
+      info: Object,
+      loading: Boolean,
+    }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

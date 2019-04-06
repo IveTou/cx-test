@@ -6,33 +6,33 @@
 </template>
 
 <script>
-import Layout from './components/Layout.vue'
-import NotFound from './components/NotFound.vue'
-import axios from 'axios'
+  import Layout from './components/Layout.vue'
+  import NotFound from './components/NotFound.vue'
+  import axios from 'axios'
 
-export default {
-  name: 'app',
-  components: {
-    Layout,
-    NotFound,
-  },
-  data () {
-    return {
-      info: null,
-      error: false,
-      loading: true,
-    }
-  },
-  mounted () {
-    axios
-      .get('http://www.mocky.io/v2/5c7552e43100009c20c23450')
-      .then(({ data }) => {
-        this.info = data
-        this.loading = false
-      })
-      .catch(() => this.error = true)
-  },
-}
+  export default {
+    name: 'app',
+    components: {
+      Layout,
+      NotFound,
+    },
+    data () {
+      return {
+        info: null,
+        error: false,
+        loading: true,
+      }
+    },
+    mounted () {
+      axios
+        .get('http://www.mocky.io/v2/5c7552e43100009c20c23450')
+        .then(({ data }) => {
+          this.info = data
+          this.loading = false
+        })
+        .catch(() => this.error = true)
+    },
+  }
 </script>
 
 <style>

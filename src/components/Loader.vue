@@ -6,9 +6,9 @@
 </template>
 
 <script>
-export default {
-  name: 'loader',
-}
+  export default {
+    name: 'loader',
+  }
 </script>
 
 <style>
