@@ -34,7 +34,12 @@
             <md-list-item>
               <md-icon>info</md-icon>
               <div class="md-list-item-text">
-                <span>{{  }}</span>
+                <ul>
+                  <li>Acesso {{ info.trucker.last_app_open_at | false | dateFormatter }}</li>
+                  <li>GPS atualizado</li>
+                  <li>Primeiro acesso em</li>
+                  <li>Versão</li>
+                </ul>
                 <p class="list-item-caption">Aplicativo</p>
               </div>
             </md-list-item>
@@ -93,8 +98,11 @@
       nameFormatter(name) {
         return name.trim().toUpperCase()
       },
-      dateFormatter(date) {
-        return moment(date).format('DD/MM/YYYY h:mm:ss')
+      dateFormatter(date, withTime) {
+        const format = withTime ?
+          'DD/MM/YYYY h:mm:ss' :
+          'DD/MM/YYYY'
+        return moment(date).format(format)
       },
       phoneFormatter(phone) {
         return phone.replace(/(\d\d)(\d\d)(\d\d\d\d\d)(\d\d\d\d)/, "+$1 ($2) $3-$4")
@@ -121,6 +129,14 @@
 
   .md-list-item-text {
     flex-direction: column-reverse !important;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    color: black !important;
   }
 
   .list-item-caption {
