@@ -1,24 +1,32 @@
 <template>
   <div class="app">
-    <Layout/>
+    <Layout v-bind:info="info"/>
   </div>
 </template>
 
 <script>
 import Layout from './components/Layout.vue'
+import axios from 'axios'
 
 export default {
   name: 'app',
   components: {
     Layout
+  },
+  data () {
+    return {
+      info: null
+    }
+  },
+  mounted () {
+    axios
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => (this.info = response))
   }
 }
 </script>
 
 <style>
-body {
-  margin: 0;
-}
 .app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

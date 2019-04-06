@@ -1,10 +1,6 @@
 <template>
   <div class="layout">
-    <md-card>
-      <md-card-header>
-        Hello
-      </md-card-header>
-    </md-card>
+    {{info}}
   </div>
 </template>
 
@@ -12,11 +8,15 @@
 export default {
   name: 'Layout',
   props: {
-    msg: String
+    info: Object
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+  .layout {
+    margin: 0 auto;
+    max-width: 1024px;
+  }
 </style>
