@@ -135,7 +135,6 @@
         const format = withTime ?
           'DD/MM/YYYY h:mm:ss' :
           'DD/MM/YYYY'
-        
 
         return date && moment(date).format(format) || 'Sem data'
       },

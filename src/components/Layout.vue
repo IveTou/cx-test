@@ -54,6 +54,11 @@
     margin: 0 auto;
     max-width: 1288px;
     padding: 24px 16px;
+    background: #f0f3f5;
+  }
+
+  .md-layout-item {
+    margin-bottom: 24px; 
   }
 
   .header {
