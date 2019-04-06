@@ -20,7 +20,7 @@
             <md-list-item>
               <md-icon>info</md-icon>
               <div class="md-list-item-text">
-                <span>{{ info.trucker.name.toUpperCase() }}</span>
+                <span>{{ info.trucker.name | nameFormatter }}</span>
                 <p class="list-item-caption">Motorista</p>
               </div>
             </md-list-item>
@@ -29,6 +29,48 @@
               <div class="md-list-item-text">
                 <span>{{ info.trucker.phone | phoneFormatter }}</span>
                 <p class="list-item-caption">Telefone</p>
+              </div>
+            </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>{{  }}</span>
+                <p class="list-item-caption">Aplicativo</p>
+              </div>
+            </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>{{  }}</span>
+                <p class="list-item-caption">Veículo</p>
+              </div>
+            </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>{{  }}</span>
+                <p class="list-item-caption">Origem</p>
+              </div>
+            </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>{{  }}</span>
+                <p class="list-item-caption">Destino</p>
+              </div>
+            </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>{{  }}</span>
+                <p class="list-item-caption">Operação</p>
+              </div>
+            </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>{{  }}</span>
+                <p class="list-item-caption">Venda</p>
               </div>
             </md-list-item>
           </md-list>
@@ -48,6 +90,9 @@
       info: Object,
     },
     filters: {
+      nameFormatter(name) {
+        return name.trim().toUpperCase()
+      },
       dateFormatter(date) {
         return moment(date).format('DD/MM/YYYY h:mm:ss')
       },
