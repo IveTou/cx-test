@@ -8,7 +8,7 @@
       </div>
       <div class="md-layout md-gutter md-alignment-center">
         <div class="md-layout-item md-large-size-60 md-medium-size-60 md-small-size-100 md-xsmall-size-100">
-          Content
+          <Summary />
         </div>
         <div class="md-layout-item md-large-size-40 md-medium-size-40 md-small-size-100 md-xsmall-size-100">
           <Maps 
@@ -24,6 +24,7 @@
 
 <script>
   import Loader from './Loader.vue'
+  import Summary from './Summary.vue'
   import Maps from './Maps.vue'
 
   export default {
@@ -31,6 +32,7 @@
     components: {
       Loader,
       Maps,
+      Summary,
     },
     props: {
       info: Object,
