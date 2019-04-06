@@ -87,6 +87,33 @@
           </md-list>
         </div>
         <div class="md-layout-item md-large-size-40 md-medium-size-40 md-small-size-100 md-xsmall-size-100">
+          <md-list class="md-double-line">
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                  <span>{{ info.pickup_date | dateFormatter(true) }}</span>
+                  <span class="list-item-caption">Coleta agendada </span>
+                </div>
+            </md-list-item>
+            <md-list-item style="padding-left: 30px;">
+              <div class="md-list-item-text">
+                <span>{{ info.delivery_date | dateFormatter(true) }}</span>
+                <span class="list-item-caption">Entrega agendada </span>
+              </div>
+            </md-list-item>
+            <md-list-item style="padding-left: 30px;">
+              <div class="md-list-item-text">
+                <span>{{ info.estimated_time_of_arrival | dateFormatter(true) }}</span>
+                <span class="list-item-caption">Entrega calculada </span>
+              </div>
+            </md-list-item>
+            <md-list-item style="padding-left: 30px;">
+              <div class="md-list-item-text">
+                <span>{{ info.manual_input_estimated_time_of_arrival | dateFormatter(true) }}</span>
+                <span class="list-item-caption">Entrega manual </span>
+              </div>
+            </md-list-item>
+          </md-list>
         </div>  
     </div>
   </div>
@@ -108,8 +135,9 @@
         const format = withTime ?
           'DD/MM/YYYY h:mm:ss' :
           'DD/MM/YYYY'
+        
 
-        return moment(date).format(format)
+        return date && moment(date).format(format) || 'Sem data'
       },
       phoneFormatter(phone) {
         return phone.replace(/(\d\d)(\d\d)(\d\d\d\d\d)(\d\d\d\d)/, "+$1 ($2) $3-$4")
