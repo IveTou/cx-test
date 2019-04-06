@@ -7,11 +7,15 @@
         <span class="md-caption">ID do cliente: {{ info.customer.id }}</span>
       </div>
       <div class="md-layout md-gutter md-alignment-center">
-        <div class="md-layout-item md-large-size-66 md-medium-size-66 md-small-size-100 md-xsmall-size-100">
+        <div class="md-layout-item md-large-size-60 md-medium-size-60 md-small-size-100 md-xsmall-size-100">
           Content
         </div>
-        <div class="md-layout-item md-large-size-33 md-medium-size-33 md-small-size-100 md-xsmall-size-100">
-          <Map />
+        <div class="md-layout-item md-large-size-40 md-medium-size-40 md-small-size-100 md-xsmall-size-100">
+          <Maps 
+            v-bind:origin="info.origin" 
+            v-bind:destination="info.destination" 
+            v-bind:lastUpdate="info.trucker.last_app_position_at"
+          />
         </div>
       </div>  
     </div>
@@ -20,13 +24,13 @@
 
 <script>
   import Loader from './Loader.vue'
-  import Map from './Map.vue'
+  import Maps from './Maps.vue'
 
   export default {
     name: 'Layout',
     components: {
       Loader,
-      Map,
+      Maps,
     },
     props: {
       info: Object,
