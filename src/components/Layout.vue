@@ -7,10 +7,10 @@
         <span class="md-caption">ID do cliente: {{ info.customer.id }}</span>
       </div>
       <div class="md-layout md-gutter md-alignment-top-center">
-        <div class="md-layout-item md-large-size-60 md-medium-size-60 md-small-size-100 md-xsmall-size-100">
+        <div class="md-layout-item md-xlarge-size-60 md-large-size-66 md-medium-size-66 md-small-size-100 md-xsmall-size-100">
           <Description v-bind:info="info" />
         </div>
-        <div class="md-layout-item md-large-size-40 md-medium-size-40 md-small-size-100 md-xsmall-size-100">
+        <div class="md-layout-item md-xlarge-size-40 md-large-size-33 md-medium-size-33 md-small-size-100 md-xsmall-size-100">
           <Maps 
             v-bind:origin="info.origin" 
             v-bind:destination="info.destination" 
@@ -52,7 +52,7 @@
   .layout {
     text-align: left;
     margin: 0 auto;
-    max-width: 1288px;
+    max-width: 1480px;
     padding: 24px 16px;
     background: #f0f3f5;
   }

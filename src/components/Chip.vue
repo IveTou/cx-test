@@ -17,9 +17,9 @@
     width: auto !important;
     display: inline-block;
     padding: 2px 6px;
-    font-size: 16px !important;
+    font-size: 14px !important;
     border-radius: 4px;
-    color: #a0a0a0;
+    color: #a0a0a0  !important;
     border: solid 1px #a0a0a0;
     margin: 2px !important;
   }

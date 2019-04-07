@@ -1,7 +1,7 @@
 <template>
   <div class="description">
     <div class="md-layout md-gutter md-alignment-top-center">
-        <div class="md-layout-item md-xlarge-size-60 md-large-size-60 md-medium-size-60 md-small-size-100 md-xsmall-size-100">
+        <div class="md-layout-item md-xlarge-size-55 md-large-size-55 md-medium-size-55 md-small-size-100 md-xsmall-size-100">
           <md-list class="md-double-line">
             <md-list-item>
               <md-icon>info</md-icon>
@@ -86,7 +86,7 @@
             </md-list-item>
           </md-list>
         </div>
-        <div class="md-layout-item md-xlarge-size-40 md-large-size-40 md-medium-size-40 md-small-size-100 md-xsmall-size-100">
+        <div class="md-layout-item md-xlarge-size-45 md-large-size-45 md-medium-size-45 md-small-size-100 md-xsmall-size-100">
           <md-list class="md-double-line">
             <md-list-item>
               <md-icon>info</md-icon>
@@ -120,7 +120,7 @@
                   <Chip 
                     v-for="document in info.documents" 
                     :key="document.id" 
-                    v-bind:content="document.name" 
+                    v-bind:content="document.name | docpayNameFormatter" 
                     v-bind:active="document.status === 'emitted'"
                   />
                 </span>
@@ -134,7 +134,7 @@
                   <Chip 
                     v-for="payment in info.payments" 
                     :key="payment.id" 
-                    v-bind:content="payment.name" 
+                    v-bind:content="payment.name | docpayNameFormatter" 
                     v-bind:active="payment.status !== 'not_ok'"
                   />
                 </span>
@@ -179,6 +179,26 @@
       },
       phoneFormatter(phone) {
         return phone.replace(/(\d\d)(\d\d)(\d\d\d\d\d)(\d\d\d\d)/, "+$1 ($2) $3-$4")
+      },
+      docpayNameFormatter(name) {
+        switch(name.toUpperCase()) {
+          case 'CTE':
+            return 'CTe'
+          case 'MDFE':
+            return 'MDFe'
+          case 'CT':
+            return 'Contrato'
+          case 'CIOT':
+            return 'CIOT'
+          case 'ADIA':
+            return 'Adiantamento'
+          case 'CANH':
+            return 'Canhoto'
+          case 'SALD':
+            return 'Saldo'
+          default:
+            return name  
+        }
       }
     }
   }
