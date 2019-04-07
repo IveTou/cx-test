@@ -91,25 +91,25 @@
             <md-list-item>
               <md-icon>info</md-icon>
               <div class="md-list-item-text">
-                  <span>{{ info.pickup_date | dateFormatter(true) }}</span>
+                  <span>{{ info.pickup_date | dateFormatter(true, 'YYYY/DD/MM') }}</span>
                   <span class="list-item-caption">Coleta agendada </span>
                 </div>
             </md-list-item>
             <md-list-item style="padding-left: 30px;">
               <div class="md-list-item-text">
-                <span>{{ info.delivery_date | dateFormatter(true) }}</span>
+                <span>{{ info.delivery_date | dateFormatter(true, 'X') }}</span>
                 <span class="list-item-caption">Entrega agendada </span>
               </div>
             </md-list-item>
             <md-list-item style="padding-left: 30px;">
               <div class="md-list-item-text">
-                <span>{{ info.estimated_time_of_arrival | dateFormatter(true) }}</span>
+                <span>{{ info.estimated_time_of_arrival | dateFormatter(true, 'X') }}</span>
                 <span class="list-item-caption">Entrega calculada </span>
               </div>
             </md-list-item>
             <md-list-item style="padding-left: 30px;">
               <div class="md-list-item-text">
-                <span>{{ info.manual_input_estimated_time_of_arrival | dateFormatter(true) }}</span>
+                <span>{{ info.manual_input_estimated_time_of_arrival | dateFormatter(true, 'X') }}</span>
                 <span class="list-item-caption">Entrega manual </span>
               </div>
             </md-list-item>
@@ -131,12 +131,12 @@
       nameFormatter(name) {
         return name.trim().toUpperCase()
       },
-      dateFormatter(date, withTime) {
+      dateFormatter(date, withTime, pattern) {
         const format = withTime ?
-          'DD/MM/YYYY h:mm:ss' :
+          'DD/MM/YYYY H:mm:ss' :
           'DD/MM/YYYY'
 
-        return date && moment(date).format(format) || 'Sem data'
+        return date && moment(date, pattern).format(format) || 'Sem data'
       },
       phoneFormatter(phone) {
         return phone.replace(/(\d\d)(\d\d)(\d\d\d\d\d)(\d\d\d\d)/, "+$1 ($2) $3-$4")
