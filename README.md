@@ -2,14 +2,15 @@
 
 ## Project setup
 
-Firstly, you must to create a .env file within the following content
+Firstly, you must to create a .env file within the following content:
+
 VUE_APP_GMAPS_API_KEY=<YOUR_GMAPS_API_KEY>
 
 Your API key has to be enabled to work with Maps and Directions service
 
-###Install modules
+### Install modules
 ```
-npm install
+npm inst all
 ```
 
 ### Compiles and hot-reloads for development
