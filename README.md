@@ -11,7 +11,7 @@ Your API key has to be enabled to work with Maps and Directions services.
 
 ### Install modules
 ```
-npm inst all
+npm install
 ```
 
 ### Compiles and hot-reloads for development
