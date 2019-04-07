@@ -4,35 +4,35 @@
         <div class="md-layout-item md-xlarge-size-55 md-large-size-55 md-medium-size-55 md-small-size-100 md-xsmall-size-100">
           <md-list class="md-double-line">
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-avatar class="md-avatar-icon md-small">ID</md-avatar>
               <div class="md-list-item-text">
                 <span>{{ info.id }}</span>
                 <span class="list-item-caption">ID do frete CargoX </span>
               </div>
             </md-list-item>
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-avatar class="md-avatar-icon md-small">ID</md-avatar>
               <div class="md-list-item-text">
                 <span>{{ info.customer_tracking_number }}</span>
                 <span class="list-item-caption">N° do pedido do cliente</span>
               </div>
             </md-list-item>
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-icon>people</md-icon>
               <div class="md-list-item-text">
                 <span>{{ info.trucker.name | nameFormatter }}</span>
                 <span class="list-item-caption">Motorista</span>
               </div>
             </md-list-item>
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-icon>phone</md-icon>
               <div class="md-list-item-text">
                 <span>{{ info.trucker.phone | phoneFormatter }}</span>
                 <span class="list-item-caption">Telefone</span>
               </div>
             </md-list-item>
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-icon>smartphone</md-icon>
               <div class="md-list-item-text">
                 <ul>
                   <li>Acesso {{ info.trucker.last_app_open_at | dateFormatter(false) }}</li>
@@ -44,14 +44,14 @@
               </div>
             </md-list-item>
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-icon>local_shipping</md-icon>
               <div class="md-list-item-text">
                 <span><p v-for="truck in info.trucks" :key="truck.id">{{ truck.type.name }} - {{ truck.plate }}</p></span>
                 <span class="list-item-caption">Veículo</span>
               </div>
             </md-list-item>
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-icon>place</md-icon>
               <div class="md-list-item-text">
                 <span>
                   <p>{{ info.origin.address }}, {{ info.origin.number }}</p>
@@ -61,7 +61,7 @@
               </div>
             </md-list-item>
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-icon>my_location</md-icon>
               <div class="md-list-item-text">
                 <span>
                   <p>{{ info.destination.address }}, {{ info.destination.number }}</p>
@@ -71,16 +71,16 @@
               </div>
             </md-list-item>
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-icon>supervised_user_circle</md-icon>
               <div class="md-list-item-text">
-                <span>{{ info.trucker_seeker.name }}</span>
+                <span>{{ info.trucker_seeker.name | nameFormatter }}</span>
                 <span class="list-item-caption">Operação</span>
               </div>
             </md-list-item>
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-icon>record_voice_over</md-icon>
               <div class="md-list-item-text">
-                <span>{{ info.salesperson.name }}</span>
+                <span>{{ info.salesperson.name | nameFormatter }}</span>
                 <span class="list-item-caption">Venda</span>
               </div>
             </md-list-item>
@@ -89,7 +89,7 @@
         <div class="md-layout-item md-xlarge-size-45 md-large-size-45 md-medium-size-45 md-small-size-100 md-xsmall-size-100">
           <md-list class="md-double-line">
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-icon>event</md-icon>
               <div class="md-list-item-text">
                   <span>{{ info.pickup_date | dateFormatter(true, 'YYYY/DD/MM') }}</span>
                   <span class="list-item-caption">Coleta agendada </span>
@@ -98,23 +98,23 @@
             <md-list-item style="padding-left: 30px;">
               <div class="md-list-item-text">
                 <span>{{ info.delivery_date | dateFormatter(true, 'X') }}</span>
-                <span class="list-item-caption">Entrega agendada <md-icon class="small">info</md-icon></span>
+                <span class="list-item-caption">Entrega agendada <md-icon class="small">help</md-icon></span>
               </div>
             </md-list-item>
             <md-list-item style="padding-left: 30px;">
               <div class="md-list-item-text">
                 <span>{{ info.estimated_time_of_arrival | dateFormatter(true, 'X') }}</span>
-                <span class="list-item-caption">Entrega calculada <md-icon class="small">info</md-icon></span>
+                <span class="list-item-caption">Entrega calculada <md-icon class="small">help</md-icon></span>
               </div>
             </md-list-item>
             <md-list-item style="padding-left: 30px;">
               <div class="md-list-item-text">
                 <span>{{ info.manual_input_estimated_time_of_arrival | dateFormatter(true, 'X') }}</span>
-                <span class="list-item-caption">Entrega manual <md-icon class="small">info</md-icon></span>
+                <span class="list-item-caption">Entrega manual <md-icon class="small">help</md-icon></span>
               </div>
             </md-list-item>
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-icon>library_books</md-icon>
               <div class="md-list-item-text">
                 <span>
                   <Chip 
@@ -128,7 +128,7 @@
               </div>
             </md-list-item>
             <md-list-item>
-              <md-icon>info</md-icon>
+              <md-icon>monetization_on</md-icon>
               <div class="md-list-item-text">
                 <span>
                   <Chip 
@@ -217,6 +217,16 @@
     margin-right: 8px !important;
     width: auto !important;
     color: #b0bec5 !important;
+  }
+
+  .md-avatar {
+    background: #b0bec5 !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin-right: 8px !important;
+    margin-top: 0 !important;
   }
 
   .md-icon.small {

@@ -2,7 +2,7 @@
   <div class="stepper">
     <md-list class="md-double-line">
       <md-subheader>
-        <md-icon class="md-primary">phone</md-icon>
+        <md-icon class="md-primary">linear_scale</md-icon>
         <span>{{ title }}</span>
       </md-subheader>
       <md-list-item v-for="(step, index) in steps" :key="index">
