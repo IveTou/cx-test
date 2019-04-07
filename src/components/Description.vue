@@ -1,7 +1,7 @@
 <template>
   <div class="description">
     <div class="md-layout md-gutter md-alignment-top-center">
-        <div class="md-layout-item md-large-size-60 md-medium-size-60 md-small-size-100 md-xsmall-size-100">
+        <div class="md-layout-item md-xlarge-size-60 md-large-size-60 md-medium-size-60 md-small-size-100 md-xsmall-size-100">
           <md-list class="md-double-line">
             <md-list-item>
               <md-icon>info</md-icon>
@@ -54,7 +54,7 @@
               <md-icon>info</md-icon>
               <div class="md-list-item-text">
                 <span>
-                  <p>{{ info.origin.address }},{{ info.origin.number }}</p>
+                  <p>{{ info.origin.address }}, {{ info.origin.number }}</p>
                   <p>{{ info.origin.city }} - {{ info.origin.state }} - CEP: {{ info.origin.zip_code }}</p>
                 </span>
                 <span class="list-item-caption">Origem</span>
@@ -64,7 +64,7 @@
               <md-icon>info</md-icon>
               <div class="md-list-item-text">
                 <span>
-                  <p>{{ info.destination.address }},{{ info.destination.number }}</p>
+                  <p>{{ info.destination.address }}, {{ info.destination.number }}</p>
                   <p>{{ info.destination.city }} - {{ info.destination.state }} - CEP: {{ info.destination.zip_code }}</p>
                 </span>
                 <span class="list-item-caption">Destino</span>
@@ -86,7 +86,7 @@
             </md-list-item>
           </md-list>
         </div>
-        <div class="md-layout-item md-large-size-40 md-medium-size-40 md-small-size-100 md-xsmall-size-100">
+        <div class="md-layout-item md-xlarge-size-40 md-large-size-40 md-medium-size-40 md-small-size-100 md-xsmall-size-100">
           <md-list class="md-double-line">
             <md-list-item>
               <md-icon>info</md-icon>
@@ -98,19 +98,19 @@
             <md-list-item style="padding-left: 30px;">
               <div class="md-list-item-text">
                 <span>{{ info.delivery_date | dateFormatter(true, 'X') }}</span>
-                <span class="list-item-caption">Entrega agendada </span>
+                <span class="list-item-caption">Entrega agendada <md-icon class="small">info</md-icon></span>
               </div>
             </md-list-item>
             <md-list-item style="padding-left: 30px;">
               <div class="md-list-item-text">
                 <span>{{ info.estimated_time_of_arrival | dateFormatter(true, 'X') }}</span>
-                <span class="list-item-caption">Entrega calculada </span>
+                <span class="list-item-caption">Entrega calculada <md-icon class="small">info</md-icon></span>
               </div>
             </md-list-item>
             <md-list-item style="padding-left: 30px;">
               <div class="md-list-item-text">
                 <span>{{ info.manual_input_estimated_time_of_arrival | dateFormatter(true, 'X') }}</span>
-                <span class="list-item-caption">Entrega manual </span>
+                <span class="list-item-caption">Entrega manual <md-icon class="small">info</md-icon></span>
               </div>
             </md-list-item>
           </md-list>
@@ -160,7 +160,13 @@
 
   .md-icon {
     margin-right: 8px !important;
-    margin-top: -5px !important;
+    width: auto !important;
+    color: #b0bec5 !important;
+  }
+
+  .md-icon.small {
+    font-size: 16px!important;
+    margin-bottom: 2px !important;
   }
 
   .md-list-item-text {
@@ -188,6 +194,7 @@
   }
 
   .list-item-caption {
-    margin-bottom: 8px !important;
+    margin-bottom: 4px !important;
+    line-height: 24px !important;
   }
 </style>

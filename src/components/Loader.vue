@@ -16,5 +16,6 @@
     margin: 80px auto;
     width: 100%;
     text-align: center;
+    height: 100vh;
   }
 </style>

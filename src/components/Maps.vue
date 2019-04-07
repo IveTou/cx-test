@@ -20,7 +20,7 @@ import moment from 'moment'
     },
     filters: {
       dateFormatter(date) {
-        return moment(date).format('DD/MM/YYYY h:mm:ss')
+        return moment(date).format('DD/MM/YYYY H:mm:ss')
       },
     },
     async mounted() {

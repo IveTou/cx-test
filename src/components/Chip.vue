@@ -9,7 +9,7 @@
     name: 'loader',
     props: {
       content: String,
-      active: Boolean
+      active: Boolean,
     },
   }
 </script>
