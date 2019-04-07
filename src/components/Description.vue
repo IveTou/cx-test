@@ -121,7 +121,7 @@
                     v-for="document in info.documents" 
                     :key="document.id" 
                     v-bind:content="document.name | docpayNameFormatter" 
-                    v-bind:active="document.status === 'emitted'"
+                    v-bind:emitted="document.status === 'emitted'"
                   />
                 </span>
                 <span class="list-item-caption">Documentos</span>
@@ -135,20 +135,14 @@
                     v-for="payment in info.payments" 
                     :key="payment.id" 
                     v-bind:content="payment.name | docpayNameFormatter" 
-                    v-bind:active="payment.status !== 'not_ok'"
+                    v-bind:emitted="payment.status !== 'not_ok'"
                   />
                 </span>
                 <span class="list-item-caption">Pagamentos</span>
               </div>
             </md-list-item>
-            <md-list-item>
-              <md-icon>info</md-icon>
-              <div class="md-list-item-text">
-                <span>{{  }}</span>
-                <span class="list-item-caption">Status</span>
-              </div>
-            </md-list-item>
           </md-list>
+          <Stepper v-bind:title="'Status'" v-bind:items="info.status_history"/>
         </div>  
     </div>
   </div>
@@ -156,12 +150,14 @@
 
 <script>
   import Chip from './Chip.vue'
+  import Stepper from './Stepper/Stepper.vue'
   import moment from 'moment'
 
   export default {
     name: 'description',
     components: {
       Chip,
+      Stepper,
     },
     props: {
       info: Object,

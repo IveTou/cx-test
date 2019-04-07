@@ -1,5 +1,5 @@
 <template>
-  <div class="chip" v-bind:class="active && 'active'">{{ content }}</div>
+  <div class="chip" v-bind:class="emitted && 'emitted'">{{ content }}</div>
 </template>
 
 <script> 
@@ -7,7 +7,7 @@
     name: 'loader',
     props: {
       content: String,
-      active: Boolean,
+      emitted: Boolean,
     },
   }
 </script>
@@ -24,7 +24,7 @@
     margin: 2px !important;
   }
 
-  .active {
+  .emitted {
     color: white !important;
     border: solid 1px #6bcd72;
     background: #6bcd72 !important;
