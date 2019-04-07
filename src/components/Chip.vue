@@ -1,10 +1,8 @@
 <template>
-  <div class="chip" v-bind:class="active && 'active'">
-    {{ content }}
-  </div>
+  <div class="chip" v-bind:class="active && 'active'">{{ content }}</div>
 </template>
 
-<script>
+<script> 
   export default {
     name: 'loader',
     props: {
@@ -16,18 +14,19 @@
 
 <style>
   .chip {
+    width: auto !important;
     display: inline-block;
-    padding: 4px 6px;
-    font-size: 16px;
+    padding: 2px 6px;
+    font-size: 16px !important;
     border-radius: 4px;
     color: #a0a0a0;
-    border: 1px #a0a0a0;
-    border-style: solid;
+    border: solid 1px #a0a0a0;
+    margin: 2px !important;
   }
 
   .active {
-    color: white;
-    border-style: none;
-    background: #6bcd72;
+    color: white !important;
+    border: solid 1px #6bcd72;
+    background: #6bcd72 !important;
   }
 </style>

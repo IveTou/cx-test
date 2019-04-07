@@ -113,6 +113,41 @@
                 <span class="list-item-caption">Entrega manual <md-icon class="small">info</md-icon></span>
               </div>
             </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>
+                  <Chip 
+                    v-for="document in info.documents" 
+                    :key="document.id" 
+                    v-bind:content="document.name" 
+                    v-bind:active="document.status === 'emitted'"
+                  />
+                </span>
+                <span class="list-item-caption">Documentos</span>
+              </div>
+            </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>
+                  <Chip 
+                    v-for="payment in info.payments" 
+                    :key="payment.id" 
+                    v-bind:content="payment.name" 
+                    v-bind:active="payment.status !== 'not_ok'"
+                  />
+                </span>
+                <span class="list-item-caption">Pagamentos</span>
+              </div>
+            </md-list-item>
+            <md-list-item>
+              <md-icon>info</md-icon>
+              <div class="md-list-item-text">
+                <span>{{  }}</span>
+                <span class="list-item-caption">Status</span>
+              </div>
+            </md-list-item>
           </md-list>
         </div>  
     </div>
@@ -120,10 +155,14 @@
 </template>
 
 <script>
+  import Chip from './Chip.vue'
   import moment from 'moment'
 
   export default {
     name: 'description',
+    components: {
+      Chip,
+    },
     props: {
       info: Object,
     },
@@ -155,7 +194,7 @@
 
   .md-list-item > div > div {
     align-items: flex-start;
-    padding: 16px 8px;
+    padding: 8px;
   }
 
   .md-icon {
