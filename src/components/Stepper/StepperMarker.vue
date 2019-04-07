@@ -25,7 +25,7 @@
   .marker-line {
     height: 24px;
     border-left: solid 3px blue;
-    margin-left: 33px;
+    margin-left: 34px;
     margin-top: 8px;
   }
 
