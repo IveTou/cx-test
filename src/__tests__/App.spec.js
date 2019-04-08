@@ -6,7 +6,7 @@ import NotFound from '@/components/NotFound.vue'
 const factory = () => {
   return shallowMount(App)
 }
-
+//If I have time, will change App to change error status by the info state
 describe('App', () => {
   it('shows a `not found` page if API`s file has not been fetched', () => {
     const wrapper = factory()

@@ -6,8 +6,8 @@
 </template>
 
 <script>
-  import Layout from './components/Layout.vue'
-  import NotFound from './components/NotFound.vue'
+  import Layout from '@/components/Layout.vue'
+  import NotFound from '@/components/NotFound.vue'
   import axios from 'axios'
 
   export default {

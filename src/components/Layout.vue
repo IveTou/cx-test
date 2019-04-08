@@ -1,10 +1,10 @@
 <template>
   <div class="layout">
-    <Loader v-if="loading" />  
+    <Loader v-if="loading && !info" />  
     <div v-else class="content">
       <div class="header">
-        <h1 class="md-display-1">{{ info.customer.name }}</h1>
-        <span class="md-caption">ID do cliente: {{ info.customer.id }}</span>
+        <h1 class="md-display-1">{{ info && info.customer.name }}</h1>
+        <span class="md-caption">ID do cliente: {{ info && info.customer.id }}</span>
       </div>
       <div class="md-layout md-gutter md-alignment-top-center">
         <div class="md-layout-item md-xlarge-size-60 md-large-size-66 md-medium-size-66 md-small-size-100 md-xsmall-size-100">
@@ -12,9 +12,9 @@
         </div>
         <div class="md-layout-item md-xlarge-size-40 md-large-size-33 md-medium-size-33 md-small-size-100 md-xsmall-size-100">
           <Maps 
-            v-bind:origin="info.origin" 
-            v-bind:destination="info.destination" 
-            v-bind:last_update="info.trucker.last_app_position_at"
+            v-bind:origin="info && info.origin" 
+            v-bind:destination="info && info.destination" 
+            v-bind:last_update="info && info.trucker.last_app_position_at"
           />
         </div>
       </div>  
