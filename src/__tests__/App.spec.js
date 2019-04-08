@@ -8,11 +8,27 @@ const factory = () => {
 }
 
 describe('App', () => {
-  it('exibe uma mensagem de boas vindas', () => {
+  it('shows a `not found` page if API`s file has not been fetched', () => {
     const wrapper = factory()
     wrapper.setData({ error: true })
+    expect(wrapper.contains(NotFound)).toBeTruthy()
+  })
 
-    //expect(wrapper.contains(NotFound)).toBeTruthy()
-    expect(wrapper.find('not-found')).toBeTruthy()
+  it('does not show a `not found` page if API`s file has been fetched', () => {
+    const wrapper = factory()
+    wrapper.setData({ error: false })
+    expect(wrapper.contains(NotFound)).toBeFalsy()
+  })
+
+  it('shows the main layout page if API`s file has been fetched', () => {
+    const wrapper = factory()
+    wrapper.setData({ error: false })
+    expect(wrapper.contains(Layout)).toBeTruthy()
+  })
+
+  it('does not show the main layout page if API`s file has not been fetched', () => {
+    const wrapper = factory()
+    wrapper.setData({ error: true })
+    expect(wrapper.contains(Layout)).toBeFalsy()
   })
 });
