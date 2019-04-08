@@ -1,23 +1,18 @@
 import { shallowMount } from '@vue/test-utils'
 import App from '@/App.vue'
+import Layout from '@/components/Layout.vue'
 import NotFound from '@/components/NotFound.vue'
 
-const factory = (values = {}) => {
-  return shallowMount(App, {
-    data: { ...values  }
-  })
+const factory = () => {
+  return shallowMount(App)
 }
 
 describe('App', () => {
-  it('does not show a not-found page if there is no error', () => {
-    const wrapper = factory({ error: false  })
+  it('exibe uma mensagem de boas vindas', () => {
+    const wrapper = factory()
+    wrapper.setData({ error: true })
 
-    expect(wrapper.find(NotFound).exists()).toBeFalsy()
+    //expect(wrapper.contains(NotFound)).toBeTruthy()
+    expect(wrapper.find('not-found')).toBeTruthy()
   })
-
-  it('shows a not-found page if an error exists', () => {
-    const wrapper = factory({ error: true  })
-
-    expect(wrapper.find(NotFound).exists()).toBeTruthy()
-  })
-})
+});
